@@ -27,7 +27,7 @@ export default function Login() {
     localStorage.setItem("token", response.token.token);
 
     const menuResponse = await request("RoleView", "GET", {});
-    console.log(menuResponse)
+    localStorage.setItem("menus", JSON.stringify(menuResponse.data))
     // navigate("/dashboard");
   };
 

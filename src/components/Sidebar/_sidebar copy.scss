@@ -1,0 +1,121 @@
+
+.siderbarListContainer{
+    overflow: auto;
+    padding-bottom: 10vh;
+    
+    background-repeat:no-repeat;
+    background-size:cover;
+    height: 100%;
+
+    animation-name: floating;
+    animation-duration: 43s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+// @keyframes floating {
+//     0% {
+//         background-position: 0 10px;
+//         background-image: url("src/img/2.png");
+//     }
+//     25% {
+//         background-position: 10px -10px;
+//         background-image: url("src/img/3.png");
+//     }
+//     50% {
+//         background-position: 0 -30px;
+//         background-image: url("src/img/2.png");
+//     }
+//     75% {
+//         background-position: 0 10px;
+//         background-image: url("src/img/3.png");
+//     }
+//     100% {
+//         background-image: url("src/img/2.png");
+//         background-position: 0 0;
+//     }
+// }
+.sidebar-list {
+    transform: translateX(0);
+    margin-left: 1vh;
+    transition: transform 0.5s ease;
+    background-color: transparent;
+    .sidebar-item {
+        display: block;
+       
+        font-size: 12pt;
+        height: 34px;
+        margin: 0.5vh 0vh;
+        padding-left: 25px;
+        padding-top: 5px;
+        transition: 0.2s;
+        align-items: center;
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    .sidebar-active,
+    .sidebar-item:hover {
+        background-color: #140e6e;
+        margin: .5vh 0vh;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 2px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        padding-left: 30px;
+
+    }
+
+    .sidebar-item.sidebar-accordion {
+        cursor: pointer;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+        
+    }
+
+    .sidebar-item.item-selected {
+        background-image: url("../../img/Polígono\ 1.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        margin-left: 15px;
+        
+    }
+
+    .submenu-panel {
+        display: flex;
+        flex-direction: column;
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        font-size: 15px;
+        .sidebar-subitem {
+            
+            transition: .2s;
+            color: #ffffff;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.sidebar-accordion:before {
+    content: '\002B';
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+    
+}
+
+.sidebar-active:before {
+    content: "\2212";
+    
+}
+
+.item-selected {
+    background-image: url("../../img/Polígono\ 1.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 15px;
+    
+}
