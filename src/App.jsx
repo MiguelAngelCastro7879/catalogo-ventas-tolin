@@ -16,9 +16,9 @@ function App() {
 
   return (
     <div className="h-screen" id="page-container">
-      <div className="body-container">
+      <div className={!isLoginOrLanding && "body-container"}>
         {!isLoginOrLanding && <Sidebar />}
-        <div className="content">
+        <div className={!isLoginOrLanding && "content"}>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
