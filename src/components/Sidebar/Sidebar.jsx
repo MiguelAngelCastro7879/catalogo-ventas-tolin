@@ -12,7 +12,6 @@ const Sidebar = (props) => {
     
     useEffect(() => {
         setUserMenus(JSON.parse(localStorage.getItem('menus')));
-        console.log(JSON.parse(localStorage.getItem('menus')))
     }, []);
 
     

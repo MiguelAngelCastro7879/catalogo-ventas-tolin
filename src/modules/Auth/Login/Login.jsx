@@ -28,7 +28,7 @@ export default function Login() {
 
     const menuResponse = await request("RoleView", "GET", {});
     localStorage.setItem("menus", JSON.stringify(menuResponse.data))
-    // navigate("/dashboard");
+    navigate("/dashboard");
   };
 
   return (
