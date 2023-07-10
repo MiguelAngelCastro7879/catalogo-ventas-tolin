@@ -88,7 +88,7 @@ const Sidebar = (props) => {
                                             return (
                                                 <Link
                                                     key={index2}
-                                                    to={submenu.name}
+                                                    to={'/'+submenu.name}
                                                     className={`leftmenu-subitem`}
                                                     // onClick={() => SetSelectedMenuFunc(submenu.menu_nombre)}
                                                 >

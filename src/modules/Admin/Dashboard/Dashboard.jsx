@@ -17,13 +17,20 @@ const initialState = {
   selectedMenu: ""
 };
 
-function Dashboard() {
+function Dashboard(props) {
   return (
     <>
       <div id="page-container">
         <div className="body-container">
           <Sidebar></Sidebar>
-          <div className="content">Dashboard</div>
+          <div className="content">
+            { props.children ? (props.children) : (
+              <div>
+                ESTE ES UN PINSHI DASHBOARD
+              </div>
+            )
+            }
+          </div>
         </div>
       </div>
     </>
