@@ -13,9 +13,9 @@ export default function Login() {
   });
 
   useEffect(() => {
-    // if (localStorage.getItem("token")) {
-    //   navigate("/dashboard");
-    // }
+    if (localStorage.getItem("token")) {
+      navigate("/dashboard");
+    }
     setCanLogin(true);
   }, []);
 

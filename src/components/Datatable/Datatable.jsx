@@ -3,9 +3,9 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 // import { DataGrid, Column, Scrolling, Selection } from 'devextreme-react/data-grid';
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.css';
-import '../../sass/_tablesStyle.scss'
+// import 'devextreme/dist/css/dx.common.css';
+// import 'devextreme/dist/css/dx.light.css';
+import './_tablesStyle.scss'
 
 const Datatable = (props) => {
     const tableRef = useRef();

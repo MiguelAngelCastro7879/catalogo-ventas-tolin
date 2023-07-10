@@ -1,0 +1,674 @@
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// colors
+$color-orange-intergas: hsl(9, 94%, 61%);
+$color-blue-intergas: #0c0c0cc5;
+$color-white: white;
+
+//shadows
+$shadow-dashboard-cards: 0 4px 6px rgba(0, 0, 0, 0.30);
+
+//texts
+$text-dashboard-description: #0c0c0cc5;
+$tl: 0.6s; //Transition length
+
+.containerTable {
+    max-height: 70vh;
+    overflow: auto;
+    margin-top: 3vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    border-radius: 8px;
+
+    // table {
+    //     background-color: rgb(255, 255, 255);
+    //     margin: 0;
+
+        thead {
+            position: sticky;
+            top: 0;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+            border: 1px solid n #0c0c0cc5;
+
+            th {
+                padding: 2vh 0vh;
+                background-color: #0c0c0cc5;
+                color: white;
+            }
+        }
+
+
+        
+
+        tbody {
+            // tr:hover {
+            //     border-radius: 10px 10px 0px 0px;
+            //     background-color: #10069f21;
+            //     color: rgb(0, 0, 0);
+
+            //     td {
+            //         padding: 1vh 0vh;
+            //     }
+            // }
+
+            tr {
+                border: solid;
+                border-width: 1px 0;
+                padding: 0;
+                border-color: lightgray;
+    
+                td {
+                    padding: 1vh 0vh;
+    
+                    button {
+                        transition: 0.5s;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            button:hover {
+                transform: rotate(-20deg);
+                cursor: pointer;
+            }
+        }
+
+        tfoot {
+            // border-top: 2px solid #e71010;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+
+            tr {
+                background-color: white;
+            }
+
+            button {
+                border-radius: 50%;
+                padding: 2px;
+            }
+
+            button:hover {
+                cursor: pointer;
+                // background: #e2e2e2;
+            }
+        }
+
+    // }
+}
+
+.search-input {
+    // width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background: white;
+    padding: 1em;
+    cursor: text;
+    position: absolute;
+    // transition: width 0.4s;
+}
+
+.search-icon {
+    position: relative;
+    top: 13px;
+    left: -11px;
+    color: black;
+    cursor: text;
+}
+
+
+.search-input {
+    // width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background: white;
+    padding: 1em;
+    cursor: text;
+    position: absolute;
+    transition: width 0.4s;
+}
+.search-icon {
+    position: relative;
+    top: 13px;
+    left: -11px;
+    color: black;
+    cursor: text;
+  }
+
+/* diseño del scroll */
+.containerTable::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.containerTable::-webkit-scrollbar-track {
+    background-color: #c2c2c2;
+    border-radius: 4px;
+}
+
+.containerTable::-webkit-scrollbar-thumb {
+    background-color: #0c0c0cc5;
+    //background-color: #FC4C02;
+    border-radius: 2px 4px 4px 2px;
+}
+
+.containerTable::-webkit-scrollbar-thumb:hover {
+    background-color: #0c0c0cc5;
+}
+
+
+@media screen and (max-width: 850px) {
+    .containerTable {
+        max-height: 70vh;
+        border-radius: 8px;
+        box-shadow: none;
+        padding: 0vh 2vh 2vh 2vh;
+
+        table {
+            border: 0;
+
+            thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            tbody {
+                tr {
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+                    display: block;
+                    margin-top: 0.625em;
+                    margin-bottom: 0.625em;
+                    border-radius: 10px;
+                    padding: 0 1vh;
+                }
+
+                tr:hover {
+                    background-color: #0c0c0cc5;
+                    border-bottom: 1px solid #ddd;
+                    display: block;
+                    margin-bottom: 0.625em;
+                    border-radius: 10px;
+                }
+
+                td {
+                    border-bottom: 1px solid #ddd;
+                    display: block;
+                    font-size: 0.8em;
+                    display: flex;
+                    justify-content: space-between;
+                    color: #494949;
+                }
+            }
+
+            td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #0c0c0cc5;
+
+            }
+
+            tfoot {
+                // border-top: 2px solid #e71010;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+                bottom: 0px;
+                border-radius: 10px;
+                position: relative;
+                // background-color: white;
+                
+                tr {
+                    background-color: transparent;
+                    // box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+                    // display: block;
+                    margin-top: 0.625em;
+                    margin-bottom: 0.625em;
+                    border-radius: 10px;
+                    padding: 0 1vh;
+                    border: none;
+                }
+
+                button {
+                    border-radius: 50%;
+                    padding: 2px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                    background: #e2e2e2;
+                }
+            }
+
+        }
+    }
+
+    .search-input {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        background: white;
+        padding: 1em;
+        cursor: pointer;
+        position: absolute;
+        transition: width 0.4s;
+
+        &+label .search-icon {
+            color: #4d4d4d;
+        }
+
+        // &:hover {
+        //     color: white;
+        //     box-shadow: 0 0 2em #e6e9f9;
+
+        //     &+label .search-icon {
+        //         color: white
+        //     }
+        // }
+
+        &:focus {
+            // transition: width 0.1 cubic-bezier(.72, .35, .69, .93), border-radius $tl;
+            cursor: text;
+            width: 100%;
+            border-radius: auto;
+            background: white;
+            color: #4d4d4d;
+            padding: 1em;
+            // border: 2px solid #10069fc2;
+
+            &+label .search-icon {
+                color: #4d4d4d;
+            }
+        }
+
+        // &:not(:focus) {
+        //     text-indent: -5000px;
+        // }
+
+        // .search-input input {
+        //     outline: none;
+        //     border: none;
+        // }
+
+        .search-input input::-moz-placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .search-input input:-ms-input-placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        .search-input input::placeholder {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        // for more-graceful falling back (:not browsers likely support indent)
+    }
+
+    .search-icon {
+        position: relative;
+        top: 13px;
+        left: -11px;
+        color: black;
+        cursor: pointer;
+    }
+
+}
+// Variables
+// @import "variables";
+// $tl: 0.6s; //Transition length
+
+// .containerTable {
+//     max-height: 70vh;
+//     overflow: auto;
+//     margin-top: 3vh;
+//     box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+//     border-radius: 8px;
+
+//     .dx-datagrid {
+//         .dx-datagrid-headers {
+//             position: sticky;
+//             top: 0;
+//             z-index: 1;
+
+//             .dx-datagrid-table {
+//                 .dx-header-row {
+//                     background-color: #10069f;
+//                     color: white;
+//                 }
+//             }
+//         }
+
+//         .dx-datagrid-content {
+//             overflow-y: auto;
+//             cursor: pointer;
+
+//             .dx-row:hover {
+//                 background-color: #f5f5f5;
+//                 color: black;
+//             }
+//         }
+
+//         .dx-datagrid-content .dx-header-row:hover {
+//             background-color: #10069f;
+//             color: white;
+//         }
+//     }
+
+//     // table {
+//     //     background-color: rgb(255, 255, 255);
+//     //     margin: 0;
+
+//     // thead {
+//     //     position: sticky;
+//     //     top: 0;
+//     //     box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+//     //     border: 1px solid n #10069f;
+
+//     //     th {
+//     //         padding: 2vh 0vh;
+//     //         background-color: #10069f;
+//     //         color: white;
+//     //     }
+//     // }
+
+//     // tbody {
+//     //     // tr:hover {
+//     //     //     border-radius: 10px 10px 0px 0px;
+//     //     //     background-color: #10069f21;
+//     //     //     color: rgb(0, 0, 0);
+
+//     //     //     td {
+//     //     //         padding: 1vh 0vh;
+//     //     //     }
+//     //     // }
+
+//     //     tr {
+//     //         border: solid;
+//     //         border-width: 1px 0;
+//     //         padding: 0;
+//     //         border-color: lightgray;
+
+//     //         td {
+//     //             padding: 1vh 0vh;
+
+//     //             button {
+//     //                 transition: 0.5s;
+//     //                 cursor: pointer;
+//     //             }
+//     //         }
+//     //     }
+
+//     //     button:hover {
+//     //         transform: rotate(-20deg);
+//     //         cursor: pointer;
+//     //     }
+//     // }
+
+//     // tfoot {
+//     //     // border-top: 2px solid #e71010;
+//     //     box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+
+//     //     tr {
+//     //         background-color: white;
+//     //     }
+
+//     //     button {
+//     //         border-radius: 50%;
+//     //         padding: 2px;
+//     //     }
+
+//     //     button:hover {
+//     //         cursor: pointer;
+//     //         // background: #e2e2e2;
+//     //     }
+//     // }
+//     // .dx-datagrid-header-cell {
+//     //     background-color: #ca0000;
+//     //     color: #333;
+//     //     font-weight: bold;
+//     // }
+
+//     // }
+// }
+
+// .search-input {
+//     // width: 48px;
+//     height: 48px;
+//     border-radius: 24px;
+//     background: white;
+//     padding: 1em;
+//     cursor: text;
+//     position: absolute;
+//     // transition: width 0.4s;
+// }
+
+// .search-icon {
+//     position: relative;
+//     top: 13px;
+//     left: -11px;
+//     color: black;
+//     cursor: text;
+// }
+
+
+// .search-input {
+//     // width: 48px;
+//     height: 48px;
+//     border-radius: 24px;
+//     background: white;
+//     padding: 1em;
+//     cursor: text;
+//     position: absolute;
+//     transition: width 0.4s;
+// }
+
+// .search-icon {
+//     position: relative;
+//     top: 13px;
+//     left: -11px;
+//     color: black;
+//     cursor: text;
+// }
+
+// /* diseño del scroll */
+// .containerTable::-webkit-scrollbar {
+//     width: 5px;
+//     height: 5px;
+// }
+
+// .containerTable::-webkit-scrollbar-track {
+//     background-color: #c2c2c2;
+//     border-radius: 4px;
+// }
+
+// .containerTable::-webkit-scrollbar-thumb {
+//     background-color: #10069f96;
+//     //background-color: #FC4C02;
+//     border-radius: 2px 4px 4px 2px;
+// }
+
+// .containerTable::-webkit-scrollbar-thumb:hover {
+//     background-color: #10069f;
+// }
+
+
+// @media screen and (max-width: 850px) {
+//     .containerTable {
+//         max-height: 70vh;
+//         border-radius: 8px;
+//         width: 100%;
+//         box-shadow: none;
+//         position: relative;
+        
+//         .dx-datagrid {
+//             border: 0;
+//             width: fit-content;
+//             .dx-datagrid-headers {
+//                 border: none;
+//                 clip: rect(0 0 0 0);
+//                 overflow: hidden;
+//                 position: absolute;
+                
+//             }
+
+//             tbody {
+//                 tr {
+//                     box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+//                     display: block;
+//                     margin: 2vh 1vh;
+//                     border-radius: 10px;
+                    
+//                     &:hover {
+//                         background-color: #10069f21;
+//                         border-bottom: 1px solid #ddd;
+//                         display: block;
+//                         margin: 1vh;
+//                         border-radius: 10px;
+//                     }
+//                 }
+
+//                 tr:hover {
+//                     background-color: #10069f21;
+//                     border-bottom: 1px solid #ddd;
+//                     display: block;
+//                     margin-bottom: 0.625em;
+//                     border-radius: 10px;
+//                 }
+
+//                 td {
+//                     border-bottom: 1px solid #ddd;
+//                     display: block;
+//                     font-size: 0.8em;
+//                     display: flex;
+//                     justify-content: space-between;
+//                     color: #494949;
+                    
+//                     &::before {
+//                         content: attr(data-label);
+//                         float: left;
+//                         font-weight: bold;
+//                         text-transform: uppercase;
+//                         color: #10069f;
+//                         width: auto;
+//                         white-space: nowrap;
+//                         overflow: hidden;
+//                         text-overflow: ellipsis;
+//                     }
+//                 }
+//             }
+
+//             .dx-datagrid-total-footer {
+//                 box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+//                 bottom: 0px;
+//                 border-radius: 10px;
+//                 position: relative;
+
+//                 tr {
+//                     background-color: transparent;
+//                     margin-top: 0.625em;
+//                     margin-bottom: 0.625em;
+//                     border-radius: 10px;
+//                     padding: 0 1vh;
+//                     border: none;
+//                 }
+
+//                 button {
+//                     border-radius: 50%;
+//                     padding: 2px;
+
+//                     &:hover {
+//                         cursor: pointer;
+//                         background: #e2e2e2;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     .search-input {
+//         width: 48px;
+//         height: 48px;
+//         border-radius: 24px;
+//         background: white;
+//         padding: 1em;
+//         cursor: pointer;
+//         position: absolute;
+//         transition: width 0.4s;
+
+//         &+label .search-icon {
+//             color: #4d4d4d;
+//         }
+
+//         // &:hover {
+//         //     color: white;
+//         //     box-shadow: 0 0 2em #e6e9f9;
+
+//         //     &+label .search-icon {
+//         //         color: white
+//         //     }
+//         // }
+
+//         &:focus {
+//             // transition: width 0.1 cubic-bezier(.72, .35, .69, .93), border-radius $tl;
+//             cursor: text;
+//             width: 100%;
+//             border-radius: auto;
+//             background: white;
+//             color: #4d4d4d;
+//             padding: 1em;
+//             // border: 2px solid #10069fc2;
+
+//             &+label .search-icon {
+//                 color: #4d4d4d;
+//             }
+//         }
+
+//         // &:not(:focus) {
+//         //     text-indent: -5000px;
+//         // }
+
+//         // .search-input input {
+//         //     outline: none;
+//         //     border: none;
+//         // }
+
+//         .search-input input::-moz-placeholder {
+//             color: black;
+//             font-size: 0.9em;
+//         }
+
+//         .search-input input:-ms-input-placeholder {
+//             color: black;
+//             font-size: 0.9em;
+//         }
+
+//         .search-input input::placeholder {
+//             color: black;
+//             font-size: 0.9em;
+//         }
+
+//         // for more-graceful falling back (:not browsers likely support indent)
+//     }
+
+//     .search-icon {
+//         position: relative;
+//         top: 13px;
+//         left: -11px;
+//         color: black;
+//         cursor: pointer;
+//     }
+
+// }
