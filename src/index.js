@@ -3,21 +3,39 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import 'noty/lib/noty.css';
+import 'noty/lib/themes/metroui.css';
+
+
+const { fetch: originalFetch } = window;
+window.fetch = async (...args) => {
+    const token = localStorage.getItem('token');
+    let headers = {}
+    if(token){
+      headers = {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+      };
+    }else{
+      headers = {
+          'Content-Type': 'application/json',
+      };
+    }
+    let [resource, config ] = args;
+
+    const response = await originalFetch(resource, { ...config, headers });
+    
+    return response;
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <React.StrictMode >
     <BrowserRouter>
-      {/* <App /> */}
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
+      <App/>
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
